@@ -1,0 +1,200 @@
+B b{};
+b.wrap();
+	f();
+		mov         rcx,qword ptr [this]  
+		call        B::f (07FF6E3D414BFh)  
+		nop  
+	f_overload();
+		mov         rcx,qword ptr [this]  
+		call        B::f_overload (07FF6E3D4152Dh)  
+		nop  
+	vf();
+		mov         rax,qword ptr [this]  
+		mov         rax,qword ptr [rax]  
+		mov         rcx,qword ptr [this]  
+		call        qword ptr [rax]  
+		nop  
+
+b.wrap_overload();
+	f();
+		mov         rcx,qword ptr [this]  
+		call        B::f (07FF6E3D414BFh)  
+		nop  
+	f_overload();
+		mov         rcx,qword ptr [this]  
+		call        B::f_overload (07FF6E3D4152Dh)  
+		nop  
+	vf();
+		mov         rax,qword ptr [this]  
+		mov         rax,qword ptr [rax]  
+		mov         rcx,qword ptr [this]  
+		call        qword ptr [rax]  
+		nop  
+
+b.wrap_virtual();
+	f();
+		mov         rcx,qword ptr [this]  
+		call        B::f (07FF6E3D414BFh)  
+		nop  
+	f_overload();
+		mov         rcx,qword ptr [this]  
+		call        B::f_overload (07FF6E3D4152Dh)  
+		nop  
+	vf();
+		mov         rax,qword ptr [this]  
+		mov         rax,qword ptr [rax]  
+		mov         rcx,qword ptr [this]  
+		call        qword ptr [rax]  
+		nop  
+
+b.wrap_virtual_overload();
+	f();
+		mov         rcx,qword ptr [this]  
+		call        B::f (07FF6E3D414BFh)  
+		nop  
+	f_overload();
+		mov         rcx,qword ptr [this]  
+		call        B::f_overload (07FF6E3D4152Dh)  
+		nop  
+	vf();
+		mov         rax,qword ptr [this]  
+		mov         rax,qword ptr [rax]  
+		mov         rcx,qword ptr [this]  
+		call        qword ptr [rax]  
+		nop  
+
+
+D d{};
+d.wrap();
+	f();
+		00007FF6E3D42710  mov         rcx,qword ptr [this]  
+		00007FF6E3D42717  call        B::f (07FF6E3D414BFh)  
+		00007FF6E3D4271C  nop  
+	f_overload();
+		00007FF6E3D4271D  mov         rcx,qword ptr [this]  
+		00007FF6E3D42724  call        B::f_overload (07FF6E3D4152Dh)  
+		00007FF6E3D42729  nop  
+	vf();
+		00007FF6E3D4272A  mov         rax,qword ptr [this]  
+		00007FF6E3D42731  mov         rax,qword ptr [rax]  
+		00007FF6E3D42734  mov         rcx,qword ptr [this]  
+		00007FF6E3D4273B  call        qword ptr [rax]  
+		00007FF6E3D4273D  nop  
+d.wrap_overload();
+	f();
+		00007FF6E3D427D0  mov         rcx,qword ptr [this]  
+		00007FF6E3D427D7  call        B::f (07FF6E3D414BFh)  
+		00007FF6E3D427DC  nop  
+	f_overload();
+		00007FF6E3D427DD  mov         rcx,qword ptr [this]  
+		00007FF6E3D427E4  call        D::f_overload (07FF6E3D4153Ch)  
+		00007FF6E3D427E9  nop  
+	vf();
+		00007FF6E3D427EA  mov         rax,qword ptr [this]  
+		00007FF6E3D427F1  mov         rax,qword ptr [rax]  
+		00007FF6E3D427F4  mov         rcx,qword ptr [this]  
+		00007FF6E3D427FB  call        qword ptr [rax]  
+		00007FF6E3D427FD  nop  
+d.wrap_virtual();
+	f();
+		00007FF6E3D42830  mov         rcx,qword ptr [this]  
+		00007FF6E3D42837  call        B::f (07FF6E3D414BFh)  
+		00007FF6E3D4283C  nop  
+	f_overload();
+		00007FF6E3D4283D  mov         rcx,qword ptr [this]  
+		00007FF6E3D42844  call        B::f_overload (07FF6E3D4152Dh)  
+		00007FF6E3D42849  nop  
+	vf();
+		00007FF6E3D4284A  mov         rax,qword ptr [this]  
+		00007FF6E3D42851  mov         rax,qword ptr [rax]  
+		00007FF6E3D42854  mov         rcx,qword ptr [this]  
+		00007FF6E3D4285B  call        qword ptr [rax]  
+		00007FF6E3D4285D  nop  
+d.wrap_virtual_overload();
+	f();
+		00007FF6E3D428A0  mov         rcx,qword ptr [this]  
+		00007FF6E3D428A7  call        B::f (07FF6E3D414BFh)  
+		00007FF6E3D428AC  nop  
+	f_overload();
+		00007FF6E3D428AD  mov         rcx,qword ptr [this]  
+		00007FF6E3D428B4  call        D::f_overload (07FF6E3D4153Ch)  
+		00007FF6E3D428B9  nop  
+	vf();
+		00007FF6E3D428BA  mov         rax,qword ptr [this]  
+		00007FF6E3D428C1  mov         rax,qword ptr [rax]  
+		00007FF6E3D428C4  mov         rcx,qword ptr [this]  
+		00007FF6E3D428CB  call        qword ptr [rax]  
+		00007FF6E3D428CD  nop  
+
+
+B* pb = new D{};
+pb->wrap();
+// mov         rcx,qword ptr [pb] 
+// call        B::wrap (07FF6E3D41159h)  
+	f();
+		00007FF6E3D42710  mov         rcx,qword ptr [this]  
+		00007FF6E3D42717  call        B::f (07FF6E3D414BFh)  
+		00007FF6E3D4271C  nop  
+	f_overload();
+		00007FF6E3D4271D  mov         rcx,qword ptr [this]  
+		00007FF6E3D42724  call        B::f_overload (07FF6E3D4152Dh)  
+		00007FF6E3D42729  nop  
+	vf();
+		00007FF6E3D4272A  mov         rax,qword ptr [this]  
+		00007FF6E3D42731  mov         rax,qword ptr [rax]  
+		00007FF6E3D42734  mov         rcx,qword ptr [this]  
+		00007FF6E3D4273B  call        qword ptr [rax]  
+		00007FF6E3D4273D  nop  
+pb->wrap_overload(); 
+// call        B::wrap_overload (07FF6E3D41532h)
+// mov         rcx,qword ptr [pb]
+	f();
+		00007FF6E3D42770  mov         rcx,qword ptr [this]  
+		00007FF6E3D42777  call        B::f (07FF6E3D414BFh)  
+		00007FF6E3D4277C  nop  
+	f_overload();
+		00007FF6E3D4277D  mov         rcx,qword ptr [this]  
+		00007FF6E3D42784  call        B::f_overload (07FF6E3D4152Dh)  
+		00007FF6E3D42789  nop  
+	vf();
+		00007FF6E3D4278A  mov         rax,qword ptr [this]  
+		00007FF6E3D42791  mov         rax,qword ptr [rax]  
+		00007FF6E3D42794  mov         rcx,qword ptr [this]  
+		00007FF6E3D4279B  call        qword ptr [rax]  
+		00007FF6E3D4279D  nop  
+
+pb->wrap_virtual(); 
+// call        qword ptr [rax+8] 
+// mov         rax,qword ptr [pb]
+	f();
+		00007FF6E3D42830  mov         rcx,qword ptr [this]  
+		00007FF6E3D42837  call        B::f (07FF6E3D414BFh)  
+		00007FF6E3D4283C  nop  
+	f_overload();
+		00007FF6E3D4283D  mov         rcx,qword ptr [this]  
+		00007FF6E3D42844  call        B::f_overload (07FF6E3D4152Dh)  
+		00007FF6E3D42849  nop  
+	vf();
+		00007FF6E3D4284A  mov         rax,qword ptr [this]  
+		00007FF6E3D42851  mov         rax,qword ptr [rax]  
+		00007FF6E3D42854  mov         rcx,qword ptr [this]  
+		00007FF6E3D4285B  call        qword ptr [rax]  
+		00007FF6E3D4285D  nop  
+
+pb->wrap_virtual_overload(); 
+// call        qword ptr [rax+10h]
+// mov         rax,qword ptr [pb]
+	f();
+		00007FF6E3D428A0  mov         rcx,qword ptr [this]  
+		00007FF6E3D428A7  call        B::f (07FF6E3D414BFh)  
+		00007FF6E3D428AC  nop  
+	f_overload();
+		00007FF6E3D428AD  mov         rcx,qword ptr [this]  
+		00007FF6E3D428B4  call        D::f_overload (07FF6E3D4153Ch)  
+		00007FF6E3D428B9  nop  
+	vf();
+		00007FF6E3D428BA  mov         rax,qword ptr [this]  
+		00007FF6E3D428C1  mov         rax,qword ptr [rax]  
+		00007FF6E3D428C4  mov         rcx,qword ptr [this]  
+		00007FF6E3D428CB  call        qword ptr [rax]  
+		00007FF6E3D428CD  nop  
