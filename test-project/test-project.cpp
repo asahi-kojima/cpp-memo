@@ -122,7 +122,7 @@ int main()
 	refB.wrap_virtual_overload();
 
 	std::cout << "===========================\n"; 
-	B& refD = *pb;
+	B& refD = d;
 	refD.f();
 	refD.f_overload();
 	refD.vf();
@@ -130,4 +130,14 @@ int main()
 	refD.wrap_overload();
 	refD.wrap_virtual();
 	refD.wrap_virtual_overload();
+
+	std::cout << "===========================\n";
+	B& refpD = *pb;
+	refpD.f();
+	refpD.f_overload();
+	refpD.vf();
+	refpD.wrap();
+	refpD.wrap_overload();
+	refpD.wrap_virtual();
+	refpD.wrap_virtual_overload();
 }
