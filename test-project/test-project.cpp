@@ -79,6 +79,9 @@ int main()
 	c.f();
 
 	B b{};
+	b.f();
+	b.f_overload();
+	b.vf();
 	b.wrap();
 	b.wrap_overload();
 	b.wrap_virtual();
@@ -86,6 +89,9 @@ int main()
 
 
 	D d{};
+	d.f();
+	d.f_overload();
+	d.vf();
 	d.wrap();
 	d.wrap_overload();
 	d.wrap_virtual();
@@ -93,6 +99,9 @@ int main()
 
 
 	B* pb = new D{};
+	pb->f();
+	pb->f_overload();
+	pb->vf();
 	pb->wrap();
 	pb->wrap_overload();
 	pb->wrap_virtual();

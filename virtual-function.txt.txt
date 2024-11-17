@@ -1,4 +1,19 @@
 B b{};
+b.f();
+	00007FF689CB7448  lea         rcx,[b]  
+	00007FF689CB744C  call        B::f (07FF689CB14BFh)  
+	00007FF689CB7451  nop  
+
+b.f_overload();
+	00007FF689CB7452  lea         rcx,[b]  
+	00007FF689CB7456  call        B::f_overload (07FF689CB152Dh)  
+	00007FF689CB745B  nop  
+
+b.vf();
+	00007FF689CB745C  lea         rcx,[b]  
+	00007FF689CB7460  call        B::vf (07FF689CB147Eh)  
+	00007FF689CB7465  nop  
+
 b.wrap();
 	f();
 		mov         rcx,qword ptr [this]  
@@ -65,6 +80,21 @@ b.wrap_virtual_overload();
 
 
 D d{};
+d.f();
+	00007FF6C24F74A8  lea         rcx,[d]  
+	00007FF6C24F74AC  call        B::f (07FF6C24F14BFh)  
+	00007FF6C24F74B1  nop  
+
+d.f_overload();
+	00007FF6C24F74B2  lea         rcx,[d]  
+	00007FF6C24F74B6  call        D::f_overload (07FF6C24F153Ch)  
+	00007FF6C24F74BB  nop  
+
+d.vf();
+	00007FF6C24F74BC  lea         rcx,[d]  
+	00007FF6C24F74C0  call        D::vf (07FF6C24F1181h)  
+	00007FF6C24F74C5  nop  
+
 d.wrap();
 	f();
 		00007FF6E3D42710  mov         rcx,qword ptr [this]  
@@ -128,6 +158,23 @@ d.wrap_virtual_overload();
 
 
 B* pb = new D{};
+pb->f();
+	00007FF6B9D67544  mov         rcx,qword ptr [pb]  
+	00007FF6B9D67548  call        B::f (07FF6B9D614BFh)  
+	00007FF6B9D6754D  nop  
+
+pb->f_overload();
+	00007FF6B9D6754E  mov         rcx,qword ptr [pb]  
+	00007FF6B9D67552  call        B::f_overload (07FF6B9D6152Dh)  
+	00007FF6B9D67557  nop  
+
+pb->vf();
+	00007FF6B9D67558  mov         rax,qword ptr [pb]  
+	00007FF6B9D6755C  mov         rax,qword ptr [rax]  
+	00007FF6B9D6755F  mov         rcx,qword ptr [pb]  
+	00007FF6B9D67563  call        qword ptr [rax]  
+	00007FF6B9D67565  nop  
+
 pb->wrap();
 // mov         rcx,qword ptr [pb] 
 // call        B::wrap (07FF6E3D41159h)  
@@ -144,7 +191,8 @@ pb->wrap();
 		00007FF6E3D42731  mov         rax,qword ptr [rax]  
 		00007FF6E3D42734  mov         rcx,qword ptr [this]  
 		00007FF6E3D4273B  call        qword ptr [rax]  
-		00007FF6E3D4273D  nop  
+		00007FF6E3D4273D  nop 
+		
 pb->wrap_overload(); 
 // call        B::wrap_overload (07FF6E3D41532h)
 // mov         rcx,qword ptr [pb]
