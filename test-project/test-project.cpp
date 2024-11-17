@@ -78,6 +78,7 @@ int main()
 	C c{};
 	c.f();
 
+	std::cout << "===========================\n";
 	B b{};
 	b.f();
 	b.f_overload();
@@ -88,6 +89,7 @@ int main()
 	b.wrap_virtual_overload();
 
 
+	std::cout << "===========================\n";
 	D d{};
 	d.f();
 	d.f_overload();
@@ -98,6 +100,7 @@ int main()
 	d.wrap_virtual_overload();
 
 
+	std::cout << "===========================\n";
 	B* pb = new D{};
 	pb->f();
 	pb->f_overload();
@@ -106,4 +109,25 @@ int main()
 	pb->wrap_overload();
 	pb->wrap_virtual();
 	pb->wrap_virtual_overload();
+
+
+	std::cout << "===========================\n";
+	B& refB = b;
+	refB.f();
+	refB.f_overload();
+	refB.vf();
+	refB.wrap();
+	refB.wrap_overload();
+	refB.wrap_virtual();
+	refB.wrap_virtual_overload();
+
+	std::cout << "===========================\n"; 
+	B& refD = *pb;
+	refD.f();
+	refD.f_overload();
+	refD.vf();
+	refD.wrap();
+	refD.wrap_overload();
+	refD.wrap_virtual();
+	refD.wrap_virtual_overload();
 }
